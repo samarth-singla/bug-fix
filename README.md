@@ -35,7 +35,7 @@
 | 1   | Style.css is not filled                  | Narain        | Whole Team     |
 | 2   |        models.py basemodel not used                                  |    Shivek           |      Shivek        |
 | 3   |      removed "A1","B2","C3"  in analytics.                                    |            Shivek   |     Shivek         |
-| 4   |    changed names and usernames to name and username in analytics.py                                             |          Shivek     |    Shivek          |
+| 4   |    changed names and usernames to name and username in analytics.py                                             |          Samyak Jain    |    Samyak Jain      |
 | 5   |    added "chart": image_base64 in analytics.py                                                   |    Shivek           |    Shivek          |
 | 6   |     changed post to get in users.py                                                     |        Shivek       |      Shivek        |
 | 7   |Spelling error in db.py. "item" instead of "items" | Vansh Goyal   | Vansh Goyal             |
@@ -51,12 +51,12 @@
 | 17  | in profile.html Corrected the script path from "styles/profile.js" to "scripts/profile.js",Reordered elements to put the h1 heading first | Manik Bansal| Manik Bansal|
 | 18  |Standardized navigation to include all pages|Manik Bansal|Manik Bansal|
 | 19  |                                          |               |              |
-| 20  |                                          |               |              |
-| 21  |                                          |               |              |
+| 20  |added cors middleware in mains.py and imported optional model in model.py                                          |Samarth Singla               |Samarth Singla              |
+| 21  |import optional model in models.py                                          |Samarth Singla               |Samarth Singla              |
 | 22  |in profile.js added baseurl and port number                                          |Samarth Singla               |Samart singla              |
 | 23  | profile.js file to use "userCounts" instead of "userCount"                                         |samarth singla              |samarth singla              |
 | 24  |Fixed to use the correct data key (chart) and proper base64 image format in analytics.js                                        |Samarth Singla             |Samarth Singla|
-| 25  |                                          |               |              |
+| 25  |  quiz.js javascript try                                        |      Samyak Jain         |     Samyak Jain         |
 | 26  |                                          |               |              |
 | 27  |                                          |               |              |
 | 28  |     Removed result2 related things in items.py                                                   |    Shivek           |       Shivek       |
