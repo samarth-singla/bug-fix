@@ -10,3 +10,13 @@ def init_db():
         "users_collection": db["users"]
     }
     # Question for chocolate: How can we implement nosql syntax in mysql ???
+
+    db = init_db()
+
+@app.get("/items")
+async def get_items():
+    items = []
+    cursor = db["items_collection"].find({})
+    async for item in cursor:
+        items.append(item)
+    return items

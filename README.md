@@ -57,7 +57,7 @@
 | 23  | profile.js file to use "userCounts" instead of "userCount"                                         |samarth singla              |samarth singla              |
 | 24  |Fixed to use the correct data key (chart) and proper base64 image format in analytics.js                                        |Samarth Singla             |Samarth Singla|
 | 25  |  quiz.js javascript try                                        |      Samyak Jain         |     Samyak Jain         |
-| 26  |                                          |               |              |
+| 26  |   changed db.py                                       |   Samyak Jain             |      Samyak Jain        |
 | 27  |                                          |               |              |
 | 28  |     Removed result2 related things in items.py                                                   |    Shivek           |       Shivek       |
 | 29  |     Removed   item_details:str in items.py                                           |   Shivek            |       Shivek       |
