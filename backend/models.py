@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional #added model optional to models.py
 
 class Item(BaseModel):
     name: str

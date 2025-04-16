@@ -51,8 +51,8 @@
 | 17  |                                          |               |              |
 | 18  |                                          |               |              |
 | 19  |                                          |               |              |
-| 20  |                                          |               |              |
-| 21  |                                          |               |              |
+| 20  |added cors middleware in mains.py and imported optional model in model.py                                          |Samarth Singla               |Samarth Singla              |
+| 21  |import optional model in models.py                                          |Samarth Singla               |Samarth Singla              |
 | 22  |in profile.js added baseurl and port number                                          |Samarth Singla               |Samart singla              |
 | 23  | profile.js file to use "userCounts" instead of "userCount"                                         |samarth singla              |samarth singla              |
 | 24  |Fixed to use the correct data key (chart) and proper base64 image format in analytics.js                                        |Samarth Singla             |Samarth Singla|
