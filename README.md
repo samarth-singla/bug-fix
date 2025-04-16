@@ -54,8 +54,8 @@
 | 20  |                                          |               |              |
 | 21  |                                          |               |              |
 | 22  |                                          |               |              |
-| 23  |                                          |               |              |
-| 24  |                                          |               |              |
+| 23  | profile.js file to use "userCounts" instead of "userCount"                                         |samarth singla              |samarth singla              |
+| 24  |Fixed to use the correct data key (chart) and proper base64 image format in analytics.js                                        |Samarth Singla             |Samarth Singla|
 | 25  |                                          |               |              |
 | 26  |                                          |               |              |
 | 27  |                                          |               |              |
