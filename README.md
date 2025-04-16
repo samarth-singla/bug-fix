@@ -42,7 +42,7 @@
 | 8   |Imported missing module "router" in main.py                                         | Vansh Goyal              | Vansh Goyal             |
 | 9   |Included users router in main.py                                          | Vansh Goyal              | Vansh Goyal             |
 | 10  |Wrong address. Changed "/home" to "/"                                          | Vansh Goyal              | Vansh Goyal             |
-| 11  |                                          |               |              |
+| 11  |Changed port number from 8001 to 8000 in analytics.py                                          | Vansh Goyal              | Vansh Goyal             |
 | 12  |                                          |               |              |
 | 13  |                                          |               |              |
 | 14  |                                          |               |              |
