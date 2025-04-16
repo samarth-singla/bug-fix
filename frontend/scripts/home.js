@@ -14,3 +14,5 @@ async function loadHomeContent() {
 document.addEventListener("DOMContentLoaded", () => {
   loadHomeContent();
 });
+
+//Chocolate question for TA's, find the welcome message on Home page.
