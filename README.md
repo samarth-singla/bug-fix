@@ -45,11 +45,10 @@
 | 11  |Changed port number from 8001 to 8000 in analytics.py                                          | Vansh Goyal              | Vansh Goyal             |
 | 12  | Changed news dropdown of all sources such that it get sorted in required order                                     |      Samyak Jain         |        Samyak Jain      |
 | 13  |                                          |               |              |
-| 14  |                                         |               |           |
+| 14  |added quiz.html to all files| Manik Bansal|Manik bansal|
 | 15  |in index.html changed the charset and doctype|Manik Bansal|Manik Bansal|
 | 16  |in items.html added missing div container and proper item management interface|Manik Bansal|Manik Bansal|
-| 17  |in profile.html Corrected the script path from "styles/profile.js" to "scripts/profile.js"
-Reordered elements to put the h1 heading first| Manik Bansal| Manik Bansal|
+| 17  | in profile.html Corrected the script path from "styles/profile.js" to "scripts/profile.js",Reordered elements to put the h1 heading first | Manik Bansal| Manik Bansal|
 | 18  |Standardized navigation to include all pages|Manik Bansal|Manik Bansal|
 | 19  |                                          |               |              |
 | 20  |                                          |               |              |
