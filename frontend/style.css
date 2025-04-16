@@ -1,2 +1,208 @@
-Aah I was too lazy to implement this
-You can do it
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #2c3e50;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #34495e;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+form {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 200px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background-color: #f9f9f9;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+}
+
+/* Stats Display */
+#stats p {
+    font-size: 1.1rem;
+    margin: 0.8rem 0;
+}
+
+#stats span {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Scrollable Containers */
+.news-scrollable,
+.attempt-scrollable {
+    max-height: 500px;
+    overflow-y: auto;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* Loading Indicator */
+#loading {
+    text-align: center;
+    padding: 1rem;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Feedback Messages */
+#feedback {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Quiz Specific Styles */
+#question {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+#scoreDisplay {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Profile Specific Styles */
+#userList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* News Specific Styles */
+.news-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.news-item h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.news-item .source {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Items Specific Styles */
+.item {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background-color: #f9f9f9;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+}
