@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:8001";
+const baseURL = "http://localhost:8000";      // Fixed port number
 
 async function loadAnalytics() {
   try {
@@ -20,3 +20,29 @@ async function loadAnalytics() {
 }
 
 loadAnalytics();
+
+// const baseURL = "http://localhost:8000";  // Changed port from 8001 to 8000
+
+// async function loadAnalytics() {
+//   try {
+//     const res = await fetch(`${baseURL}/analytics`);
+//     const data = await res.json();
+    
+//     document.getElementById("itemCount").textContent = data.stats.item_count;
+//     document.getElementById("userCount").textContent = data.stats.user_count;
+//     document.getElementById("avgItemName").textContent = data.stats.avg_item_name_length.toFixed(2);
+//     document.getElementById("avgUserName").textContent = data.stats.avg_user_username_length.toFixed(2);
+//     document.getElementById("maxItemName").textContent = data.stats.max_item_name_length;
+//     document.getElementById("maxUserName").textContent = data.stats.max_user_username_length;
+    
+//     // Generate chart URL if available
+//     if (data.chart) {
+//       document.getElementById("plot").src = "data:image/png;base64," + data.chart;
+//     }
+//   } catch (error) {
+//     console.error("Error loading analytics:", error);
+//   }
+// }
+
+// // Load analytics when page loads
+// window.addEventListener('DOMContentLoaded', loadAnalytics);
