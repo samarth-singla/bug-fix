@@ -43,7 +43,7 @@
 | 9   |Included users router in main.py                                          | Vansh Goyal              | Vansh Goyal             |
 | 10  |Wrong address. Changed "/home" to "/"                                          | Vansh Goyal              | Vansh Goyal             |
 | 11  |Changed port number from 8001 to 8000 in analytics.py                                          | Vansh Goyal              | Vansh Goyal             |
-| 12  |                                          |               |              |
+| 12  | Changed news dropdown of all sources such that it get sorted in required order                                     |      Samyak Jain         |        Samyak Jain      |
 | 13  |                                          |               |              |
 | 14  |                                          |               |              |
 | 15  |                                          |               |              |
