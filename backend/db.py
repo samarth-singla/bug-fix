@@ -11,5 +11,5 @@ def init_db():
     }
     # Question for chocolate: How can we implement nosql syntax in mysql ???
 
-    db = init_db()
+db = init_db()
 
