@@ -1,6 +1,8 @@
+const baseURL = "http://localhost:8000"; //added baseurl
+
 
 async function loadUsers() {
-  const res = await fetch(`/users`);
+  const res = await fetch(`${baseURL}/users`); // changed users to be fetched from baseurl
   const users = await res.json();
   const list = document.getElementById("userList");
   list.innerHTML = "";

@@ -8,7 +8,7 @@ async def get_users_collection():
     from db import init_db
     return init_db()["users_collection"]
 
-@router.get("/")        # changed post to get request
+@router.get("/") #changed post to get request
 async def get_users():
     collection = await get_users_collection()
     users = []
@@ -17,17 +17,24 @@ async def get_users():
         users.append(user)
     return users
 
-# whats ur favorite genre of music ??? mine is EDM
 @router.post("/")
 async def create_user(user: User):
     collection = await get_users_collection()
     result = await collection.insert_one(user.dict())
-    return {"id": str(result.inserted_id)}
+    if result.inserted_id:
+        return {"id": str(result.inserted_id)}
+    raise HTTPException(status_code=500, detail="Failed to create user")
 
 @router.delete("/{user_id}")
 async def delete_user(user_id: str):
     collection = await get_users_collection()
-    result = await collection.delete_all()
-    if result.deleted_count:
-        return {"status": "deleted"}
-    raise HTTPException(status_code=404, detail="User not found")
+    try:
+        # Convert string ID to ObjectId for MongoDB query
+        object_id = ObjectId(user_id)
+        result = await collection.delete_one({"_id": object_id})
+        
+        if result.deleted_count:
+            return {"status": "deleted"}
+        raise HTTPException(status_code=404, detail="User not found")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid ID format or other error: {str(e)}")
