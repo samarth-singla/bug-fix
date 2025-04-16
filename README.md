@@ -33,8 +33,8 @@
 | ID  | Issue Description                        | Identified By | Fixed By     |
 |-----|------------------------------------------|---------------|--------------|
 | 1   | Style.css is not filled                                    |         Narain |     Whole Team     |
-| 2   |                                          |               |              |
-| 3   |                                          |               |              |
+| 2   |            models.py basemodel not used                              |       Shivek        |      Shivek        |
+| 3   | Fixed 3 issues in analytics.py                                         |     Shivek          |    Shivek          |
 | 4   |                                          |               |              |
 | 5   |                                          |               |              |
 | 6   |                                          |               |              |
