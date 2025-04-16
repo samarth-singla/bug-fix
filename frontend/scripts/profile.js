@@ -1,68 +1,43 @@
-const baseURL = "http://localhost:8000"; //added baseurl
+const baseURL = "http://localhost:8000";
 
-
-async function loadUsers() {
-  const res = await fetch(`${baseURL}/users`); // changed users to be fetched from baseurl
-  const users = await res.json();
-  const list = document.getElementById("userList");
-  list.innerHTML = "";
-  // change usercount to usercounts
-  document.getElementById("userCounts").textContent = `Total users: ${users.length}`;
-  // why did I give such a weird task
-  users.forEach(user => {
-    const li = document.createElement("li");
-    li.textContent = `${user.username}: ${user.bio}`;
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.onclick = async () => {
-      await fetch(`${baseURL}/users/${user._id}`, { method: "DELETE" });
-      loadUsers();
-    };
-
-    li.appendChild(deleteBtn);
-    list.appendChild(li);
-  });
+// Add this connectivity check at startup
+async function checkBackendConnection() {
+  try {
+    const response = await fetch(`${baseURL}/healthcheck`);
+    if (!response.ok) throw new Error('Backend unreachable');
+    console.log('Connected to backend');
+  } catch (error) {
+    console.error('Backend connection failed:', error);
+    alert('Cannot connect to server. Make sure backend is running on port 8000');
+  }
 }
 
-document.getElementById("search").addEventListener("input", async (e) => {
-  const term = e.target.value.toLowerCase();
-  const res = await fetch(`${baseURL}/users`);
-  const users = await res.json();
-  const list = document.getElementById("userList");
-  list.innerHTML = "";
-
-  const filteredUsers = users.filter(user => user.username.toLowerCase().includes(term));
-  //change usercount to usercounts
-  document.getElementById("userCounts").textContent = `Total users: ${filteredUsers.length}`;
-
-  filteredUsers.forEach(user => {
-    const li = document.createElement("li");
-    li.textContent = `${user.username}: ${user.bio}`;
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.onclick = async () => {
-      await fetch(`/users/${user._id}`, { method: "PATCH" });
-      loadUsers();
-    };
-
-    li.appendChild(deleteBtn);
-    list.appendChild(li);
-  });
-});
-
-loadUsers();
-
+// Update your form submit handler
 document.getElementById("userForm").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const username = document.getElementById("username").value;
-  const bio = document.getElementById("bio").value;
-  await fetch(`/users`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username, bio })
-  });
-  e.target.reset();
-  loadUsers();
+  const username = document.getElementById("username").value.trim();
+  const bio = document.getElementById("bio").value.trim();
+
+  try {
+    const response = await fetch(`${baseURL}/users`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, bio })
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || `HTTP error! status: ${response.status}`);
+    }
+
+    loadUsers();
+    e.target.reset();
+  } catch (error) {
+    console.error('Full error details:', error);
+    alert(`Operation failed: ${error.message}\nCheck console for details`);
+  }
 });
+
+// Initialize connection check when page loads
+checkBackendConnection();
+loadUsers();

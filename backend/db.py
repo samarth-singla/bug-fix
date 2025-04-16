@@ -13,10 +13,3 @@ def init_db():
 
     db = init_db()
 
-@app.get("/items")
-async def get_items():
-    items = []
-    cursor = db["items_collection"].find({})
-    async for item in cursor:
-        items.append(item)
-    return items
