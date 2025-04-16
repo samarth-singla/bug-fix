@@ -28,7 +28,6 @@ async def create_user(user: User):
 @router.delete("/{user_id}")
 async def delete_user(user_id: str):
     collection = await get_users_collection()
-<<<<<<< HEAD
     try:
         # Convert string ID to ObjectId for MongoDB query
         object_id = ObjectId(user_id)
@@ -39,9 +38,3 @@ async def delete_user(user_id: str):
         raise HTTPException(status_code=404, detail="User not found")
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid ID format or other error: {str(e)}")
-=======
-    result = await collection.delete_one({"_id": ObjectId(user_id)})    # changed delete_all to delete_one
-    if result.deleted_count:
-        return {"status": "deleted"}
-    raise HTTPException(status_code=404, detail="User not found")
->>>>>>> b4abc77ae77098b9920850736324ec66f9c999a5
