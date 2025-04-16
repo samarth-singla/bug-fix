@@ -35,7 +35,7 @@
 | 1   | Style.css is not filled                  | Narain        | Whole Team     |
 | 2   |        models.py basemodel not used                                  |    Shivek           |      Shivek        |
 | 3   |      removed "A1","B2","C3"  in analytics.                                    |            Shivek   |     Shivek         |
-| 4   |    changed names and usernames to name and username in analytics.py                                             |          Samyak Jain    |    Samyak Jain      |
+| 4   |    changed names and usernames to name and username in analytics.py                                             |          Shivek    |    Shivek      |
 | 5   |    added "chart": image_base64 in analytics.py                                                   |    Shivek           |    Shivek          |
 | 6   |     changed post to get in users.py                                                     |        Shivek       |      Shivek        |
 | 7   |Spelling error in db.py. "item" instead of "items" | Vansh Goyal   | Vansh Goyal             |
