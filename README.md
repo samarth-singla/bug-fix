@@ -27,10 +27,10 @@
 ### Add the names of the members and roll numbers of your team below
 
 - Manik Bansal 2024101084
-Vansh Goyal 2024101044
-Samyak Jain 2024101062
-Shivek Gupta 2024101011
-Samarth SIngla 2024101020
+- Vansh Goyal 2024101044
+- Samyak Jain 2024101062
+- Shivek Gupta 2024101011
+- Samarth SIngla 2024101020
 
 ### Table to keep track
 
