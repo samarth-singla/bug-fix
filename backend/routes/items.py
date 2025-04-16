@@ -26,7 +26,7 @@ async def create_item(item: Item):
 # async def create_item(item: Item):
 #     return {"id": "Item Inserted"}    removing duplicate router.post
 # I want a chocolate
-@router.delete("/{item_id}/{item_details}")
+@router.delete("/{item_id}")
 async def delete_item(item_id: str):        # removed item_details:str
     collection = await get_items_collection()
     result = await collection.delete_one({"_id": ObjectId(item_id)})
