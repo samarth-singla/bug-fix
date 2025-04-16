@@ -59,6 +59,6 @@
 | 25  |  quiz.js javascript try                                        |      Samyak Jain         |     Samyak Jain         |
 | 26  |   changed db.py                                       |   Samyak Jain             |      Samyak Jain        |
 | 27  |                                          |               |              |
-| 28  |     Removed result2 related things in items.py                                                   |    Shivek           |       Shivek       |
-| 29  |     Removed   item_details:str in items.py                                           |   Shivek            |       Shivek       |
-| 30  |        Commented out duplicate router.post in items.py                                                     |    Shivek           |       Shivek       |
+| 28  |     Removed result2 related things in items.py                                                   |    Shivek           |       Shivek      |
+| 29  |     Removed   item_details:str in items.py                                           |   Samyak Jain         |       Samyak Jain      |
+| 30  |        Commented out duplicate router.post in items.py                                                     |    Samyak Jain          |       Samyak Jain    |
