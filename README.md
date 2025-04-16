@@ -44,7 +44,7 @@
 | 10  |Wrong address. Changed "/home" to "/"                                          | Vansh Goyal              | Vansh Goyal             |
 | 11  |Changed port number from 8001 to 8000 in analytics.py                                          | Vansh Goyal              | Vansh Goyal             |
 | 12  | Changed news dropdown of all sources such that it get sorted in required order                                     |      Samyak Jain         |        Samyak Jain      |
-| 13  |                                          |               |              |
+| 13  | Changes POST Method to DELETE Method                                         | Vansh Goyal              | Vansh Goyal             |
 | 14  |added quiz.html to all files| Manik Bansal|Manik bansal|
 | 15  |in index.html changed the charset and doctype|Manik Bansal|Manik Bansal|
 | 16  |in items.html added missing div container and proper item management interface|Manik Bansal|Manik Bansal|
