@@ -6,7 +6,7 @@ def init_db():
     client = AsyncIOMotorClient(MONGO_URI)
     db = client["testdb"]
     return {
-        "items_collection": db["item"],
+        "items_collection": db["items"],     # item to items
         "users_collection": db["users"]
     }
     # Question for chocolate: How can we implement nosql syntax in mysql ???

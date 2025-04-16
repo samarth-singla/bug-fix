@@ -32,16 +32,16 @@
 
 | ID  | Issue Description                        | Identified By | Fixed By     |
 |-----|------------------------------------------|---------------|--------------|
-| 1   | Style.css is not filled                                    |         Narain |     Whole Team     |
-| 2   |            models.py basemodel not used                              |       Shivek        |      Shivek        |
-| 3   | Fixed 3 issues in analytics.py                                         |     Shivek          |    Shivek          |
+| 1   | Style.css is not filled                  | Narain        | Whole Team     |
+| 2   |                                          |               |              |
+| 3   |                                          |               |              |
 | 4   |                                          |               |              |
 | 5   |                                          |               |              |
 | 6   |                                          |               |              |
-| 7   |                                          |               |              |
-| 8   |                                          |               |              |
-| 9   |                                          |               |              |
-| 10  |                                          |               |              |
+| 7   |Spelling error in db.py. "item" instead of "items" | Vansh Goyal   | Vansh Goyal             |
+| 8   |Imported missing module "router" in main.py                                         | Vansh Goyal              | Vansh Goyal             |
+| 9   |Included users router in main.py                                          | Vansh Goyal              | Vansh Goyal             |
+| 10  |Wrong address. Changed "/home" to "/"                                          | Vansh Goyal              | Vansh Goyal             |
 | 11  |                                          |               |              |
 | 12  |                                          |               |              |
 | 13  |                                          |               |              |
