@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "http://localhost:8000"; // Ensure this matches your backend URL
 
 let score = 0;
 let highScore = 0;
@@ -6,6 +6,7 @@ let currentQuestion = null;
 let gameOver = false;
 let attemptHistory = [];
 
+// DOM Elements
 const scoreDisplay = document.getElementById("scoreDisplay");
 const questionDiv = document.getElementById("question");
 const form = document.getElementById("answerForm");
@@ -15,49 +16,43 @@ const attemptList = document.getElementById("attemptList");
 const attemptCount = document.getElementById("attemptCount");
 const searchInput = document.getElementById("search");
 
-function updateScoreDisplay() {
-  scoreDisplay.textContent = `Score: ${score} | High Score: ${highScore}`;
+// Initialize the quiz
+async function initQuiz() {
+  await loadHighScore();
+  await loadQuestion();
+  updateScoreDisplay();
+  updateAttempts();
 }
 
-function updateAttempts() {
-  const search = searchInput.value.toLowerCase();
-  const filtered = attemptHistory.filter(a =>
-    a.question.toLowerCase().includes(search)
-  );
-
-  attemptList.innerHTML = filtered.map(a => `
-    <div>
-      <strong>${a.question}</strong><br/>
-      Your answer: ${a.answer} — ${a.result}
-    </div>
-  `).join("");
-
-  attemptCount.textContent = `Total attempts: ${filtered.length}`;
-}
-
-searchInput.addEventListener("input", updateAttempts);
-// how is life ?
+// Load high score from backend
 async function loadHighScore() {
   try {
-    const res = await fetch(`${BASE_URL}/quiz/highscore`);
-    const data = await res.json();
+    const response = await fetch(`${BASE_URL}/highscore`);
+    if (!response.ok) throw new Error('Failed to load high score');
+    const data = await response.json();
     highScore = data.high_score;
-    updateScoreDisplay();
-  } catch {
-    feedback.textContent = "Failed to load high score.";
+  } catch (error) {
+    console.error("High score error:", error);
+    feedback.textContent = "Failed to load high score";
   }
 }
 
+// Load a new question from backend
 async function loadQuestion() {
   if (gameOver) return;
 
   try {
-    const res = await fetch(`${BASE_URL}/quiz/question`);
-    const data = await res.json();
+    const response = await fetch(`${BASE_URL}/question`);
+    if (!response.ok) throw new Error('Failed to load question');
+    
+    const data = await response.json();
     currentQuestion = data;
 
+    // Update question display
     questionDiv.textContent = data.text;
+    feedback.textContent = "";
 
+    // Create answer options
     form.innerHTML = data.options.map(option => `
       <label>
         <input type="radio" name="answer" value="${option}" required>
@@ -66,72 +61,20 @@ async function loadQuestion() {
     `).join("") + `<button type="submit">Submit</button>`;
 
     form.dataset.id = data.id;
-    feedback.textContent = "";
-  } catch {
-    feedback.textContent = "Failed to load question.";
+  } catch (error) {
+    console.error("Question error:", error);
+    questionDiv.textContent = "Failed to load question";
+    feedback.textContent = error.message;
   }
 }
 
+// Handle answer submission
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (gameOver) return;
 
   const selected = form.querySelector("input[name=answer]:checked");
-  if (!selected) return;
+  if (!selected) {
 
-  const answer = selected.value;
-  const id = parseInt(form.dataset.id);
-
-  try {
-    const res = await fetch(`${BASE_URL}/quiz/answer`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, answer, score })
-    });
-
-    const data = await res.json();
-
-    if (data.error) {
-      feedback.textContent = data.error;
-      return;
-    }
-
-    attemptHistory.push({
-      question: currentQuestion.text,
-      answer,
-      result: data.is_correct ? "✅ Correct" : `❌ Wrong (Correct: ${data.correct_answer})`
-    });
-
-    updateAttempts();
-
-    if (data.is_correct) {
-      score = data.score;
-      highScore = data.high_score;
-      updateScoreDisplay();
-      feedback.textContent = "✅ Correct!";
-      await loadQuestion();
-    } else {
-      feedback.textContent = `❌ Incorrect. Correct answer: ${data.correct_answer}. Game Over.`;
-      gameOver = true;
-      form.innerHTML = "";
-      resetBtn.classList.remove("hidden");
-    }
-  } catch {
-    feedback.textContent = "Error submitting answer.";
-  }
-});
-
-resetBtn.addEventListener("click", () => {
-  score = 0;
-  gameOver = false;
-  attemptHistory = [];
-  updateScoreDisplay();
-  updateAttempts();
-  resetBtn.classList.add("hidden");
-  loadQuestion();
-});
-
-window.addEventListener("DOMContentLoaded", async () => {
-  await loadHighScore();
-  loadQuestion();
-});
+::contentReference[oaicite:3]{index=3}
+ 

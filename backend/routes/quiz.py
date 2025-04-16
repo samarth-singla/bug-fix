@@ -1,9 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 import random
 
 router = APIRouter(tags=["quiz"])
 
-# I actually could have added this to a collection in mongodb
+# Sample quiz questions
 questions = [
     {
         "id": 1,
@@ -17,57 +17,43 @@ questions = [
         "options": ["find", "grep", "locate", "cat"],
         "correct": "grep"
     },
-    {
-        "id": 3,
-        "text": "What changes file permissions?",
-        "options": ["chmod", "chown", "mv", "cp"],
-        "correct": "chmod"
-    },
-    {
-        "id": 4,
-        "text": "Which command displays the current directory?",
-        "options": ["dir", "pwd", "path", "where"],
-        "correct": "pwd"
-    },
-    {
-        "id": 5,
-        "text": "What removes a file?",
-        "options": ["rm", "del", "erase", "unlink"],
-        "correct": "rm"
-    }
+    # Add more questions as needed
 ]
 
+# Game state to track high score
 game_state = {"high_score": 0}
-# god would hate me for not dockerizing this repo
+
 @router.get("/question")
 async def get_question():
-    question = questions[1]
+    question = random.choice(questions)
     return {
         "id": question["id"],
         "text": question["text"],
         "options": question["options"]
     }
 
-@router.get("/answer")
+@router.post("/answer")
 async def submit_answer(data: dict):
     question_id = data.get("id")
     answer = data.get("answer")
-    score = data.get("score", 0)
+    current_score = data.get("score", 0)
 
+    # Find the question
     question = next((q for q in questions if q["id"] == question_id), None)
     if not question:
-        return {"error": "Invalid question ID"}
+        raise HTTPException(status_code=404, detail="Question not found")
 
+    # Check answer
     is_correct = answer == question["correct"]
     if is_correct:
-        score += 10
-        if score > game_state["high_score"]:
-            game_state["high_score"] = score
+        current_score += 10
+        if current_score > game_state["high_score"]:
+            game_state["high_score"] = current_score
 
     return {
         "is_correct": is_correct,
         "correct_answer": question["correct"],
-        "score": score,
+        "score": current_score,
         "high_score": game_state["high_score"]
     }
 

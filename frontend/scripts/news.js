@@ -66,3 +66,14 @@ async function loadNews(searchTerm = "", source = "all", reset = false) {
 
 
 loadNews();
+document.getElementById("source").addEventListener("change", () => {
+  const source = document.getElementById("source").value;
+  const search = document.getElementById("search").value.trim();
+  loadNews(search, source, true);
+});
+
+document.getElementById("search").addEventListener("input", () => {
+  const source = document.getElementById("source").value;
+  const search = document.getElementById("search").value.trim();
+  loadNews(search, source, true);
+});
