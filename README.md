@@ -33,11 +33,11 @@
 | ID  | Issue Description                        | Identified By | Fixed By     |
 |-----|------------------------------------------|---------------|--------------|
 | 1   | Style.css is not filled                  | Narain        | Whole Team     |
-| 2   |                                          |               |              |
-| 3   |                                          |               |              |
-| 4   |                                          |               |              |
-| 5   |                                          |               |              |
-| 6   |                                          |               |              |
+| 2   |        models.py basemodel not used                                  |    Shivek           |      Shivek        |
+| 3   |      removed "A1","B2","C3"  in analytics.                                    |            Shivek   |     Shivek         |
+| 4   |    changed names and usernames to name and username in analytics.py                                             |          Shivek     |    Shivek          |
+| 5   |    added "chart": image_base64 in analytics.py                                                   |    Shivek           |    Shivek          |
+| 6   |     changed post to get in users.py                                                     |        Shivek       |      Shivek        |
 | 7   |Spelling error in db.py. "item" instead of "items" | Vansh Goyal   | Vansh Goyal             |
 | 8   |Imported missing module "router" in main.py                                         | Vansh Goyal              | Vansh Goyal             |
 | 9   |Included users router in main.py                                          | Vansh Goyal              | Vansh Goyal             |
@@ -59,6 +59,6 @@
 | 25  |                                          |               |              |
 | 26  |                                          |               |              |
 | 27  |                                          |               |              |
-| 28  |                                          |               |              |
-| 29  |                                          |               |              |
-| 30  |                                          |               |              |
+| 28  |     Removed result2 related things in items.py                                                   |    Shivek           |       Shivek       |
+| 29  |     Removed   item_details:str in items.py                                           |   Shivek            |       Shivek       |
+| 30  |        Commented out duplicate router.post in items.py                                                     |    Shivek           |       Shivek       |
